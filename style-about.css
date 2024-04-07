@@ -16,7 +16,8 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background: #ffffff; /* Adding a white background to the container */
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     border: 1px solid #e7e7e7; /* Adding a subtle border */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
 }
@@ -54,22 +55,6 @@ ul {
     padding: 0;
 }
 
-/* Buttons */
-a.button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #007bff; /* Blue button background */
-    color: #fff; /* White button text color */
-    text-decoration: none;
-    border-radius: 5px; /* Rounded corners for buttons */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Shadow for a 3D button effect */
-}
-
-a.button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    box-shadow: none; /* Removing shadow on hover for a pressed effect */
-}
 
 /* Sections & Footer */
 section, footer {
@@ -78,6 +63,10 @@ section, footer {
     margin-bottom: 30px;
     border-radius: 10px; /* Slightly rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+}
+
+section:hover{
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
 }
 
 footer {

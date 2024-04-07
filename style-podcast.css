@@ -4,16 +4,15 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.6;  transition: background-color 0.9s;
-  background: -webkit-linear-gradient(to right, #ffc500, #c21500);
-  background: linear-gradient(to right, #ffc500, #c21500);
+  line-height: 1.6;  
+  transition: background-color 0.9s;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 
 
 }
 body:hover {
-  background: #d53369;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #cbad6d, #d53369);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transition: background 2s;
   }
 
 .poppins-thin {
@@ -215,12 +214,14 @@ ul {
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background: linear-gradient(135deg, #1a09d0, #35c60d);
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   transition: transform 0.3s ease;
 }
 
 .podcast-category:hover {
   transform: translateY(-5px);
+
 }
 
 .category-title {
@@ -232,6 +233,7 @@ ul {
 
 /* Video Container Styles */
 .video-container {
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; /* 16:9 aspect ratio */
