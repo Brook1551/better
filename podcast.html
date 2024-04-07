@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts</title>
+    <link rel="stylesheet" href="style-podcast.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="poppins-semibold">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="podcast.html">Podcasts</a>
+                <li><a href="#">Ressources</a>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@Education4Alll">Youtube Channel</a></li>
+                        <li><a href="https://t.me/education4all6_8">Education4All</a></li>
+                        <li><a href="https://t.me/education4allfr6_8">Education4All French</a></li>
+                        <li><a href="https://t.me/education4allDE6_8">Education4All German</a></li>
+                        <li><a href="https://t.me/education4all66_8">Education4All Group</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br><br><br>
+
+    <section class="podcasts">
+        <div class="podcast-category">
+            <h1 class="category-title">Education4All French</h1>
+            <div class="video-container">
+                <iframe 
+                    id="1" 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/ZtW7ywEx_uo?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+                
+            </div>
+            <div class="video-container">
+                <iframe
+                id="2"
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/oXCOpJE92YM?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-container">
+                <iframe 
+                id="3"
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/bARaYb-5iok?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-container">
+                <iframe 
+                id="4"
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/blR_8zLMl18?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="podcast-category">
+            <h1 class="category-title">Education4All German</h1>
+            <div class="video-container">
+                <iframe
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/gsLRP3uMtFE?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/RcMHmhm7kZg?enablejsapi=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Find all the iframes on the page
+            var iframes = document.querySelectorAll('iframe');
+
+            // Add a click event listener to each iframe
+            iframes.forEach(function(iframe) {
+                iframe.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Create a new div for the popup background
+                    var popupBackground = document.createElement('div');
+                    popupBackground.style.width = '100%';
+                    popupBackground.style.height = '100%';
+                    popupBackground.style.position = 'fixed';
+                    popupBackground.style.top = '0';
+                    popupBackground.style.left = '0';
+                    popupBackground.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                    popupBackground.style.zIndex = '1000';
+                    popupBackground.style.display = 'flex';
+                    popupBackground.style.justifyContent = 'center';
+                    popupBackground.style.alignItems = 'center';
+
+                    // Create a new iframe for the popup video
+                    var popupIframe = document.createElement('iframe');
+                    popupIframe.src = iframe.src;
+                    popupIframe.width = '560';
+                    popupIframe.height = '315';
+                    popupIframe.frameborder = '0';
+                    popupIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    popupIframe.allowfullscreen = true;
+
+                    // Append the iframe to the popup background
+                    popupBackground.appendChild(popupIframe);
+
+                    // Append the popup background to the body
+                    document.body.appendChild(popupBackground);
+
+                    // When the user clicks on the popup background, close the popup
+                    popupBackground.addEventListener('click', function() {
+                        document.body.removeChild(popupBackground);
+                    });
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+<section class="video-section">
+    <button type="button" class="yt-modal-btn">
+    <i class="fas fa-play"></i>
+    </button>
+</section>
+<div class="modal-bg"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
