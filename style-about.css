@@ -1,69 +1,105 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset CSS */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa; /* Light gray background */
     color: #333; /* Dark gray text color */
     line-height: 1.6; /* Improved line height for readability */
 }
 
 .container {
-    width: 80%;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px; /* Add padding for better spacing */
+    padding: 20px;
+    background: #ffffff; /* Adding a white background to the container */
+    border: 1px solid #e7e7e7; /* Adding a subtle border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+/* Typography */
+h1, h2 {
+    text-align: center; /* Center align headings */
+    font-weight: 600; /* Semi-bold font weight for emphasis */
+    margin-bottom: 20px;
 }
 
 h1 {
     color: #007bff; /* Blue heading */
-    font-size: 2.5rem; /* Larger font size for main heading */
-    margin-bottom: 20px; /* Add spacing below heading */
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Text shadow for a 3D effect */
 }
 
 h2 {
     color: #0056b3; /* Darker blue heading */
-    font-size: 1.8rem; /* Slightly smaller font size for subheadings */
-    margin-bottom: 15px; /* Add spacing below subheadings */
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-p {
-    font-size: 1.1rem; /* Medium font size for paragraphs */
-    margin-bottom: 15px; /* Add spacing below paragraphs */
+/* Text Elements */
+p, li {
+    font-size: 1.1rem; /* Medium font size for text elements */
+    margin-bottom: 15px;
+    line-height: 1.5; /* Improved line height for readability */
+    color: #555; /* Slightly lighter text color for a modern look */
 }
 
+/* List Style */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-a {
-    color: #007bff;
+/* Buttons */
+a.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff; /* Blue button background */
+    color: #fff; /* White button text color */
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Shadow for a 3D button effect */
 }
 
-a:hover {
-    color: #0056b3; /* Darker blue on hover */
+a.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: none; /* Removing shadow on hover for a pressed effect */
 }
 
-section {
+/* Sections & Footer */
+section, footer {
     background-color: #fff; /* White background for sections */
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 30px;
-    border-radius: 8px; /* Rounded corners for sections */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
 }
 
 footer {
     background-color: #007bff; /* Blue background for footer */
     color: #fff; /* White text color for footer */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners for footer */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    text-align: center; /* Center align footer content */
+    padding: 30px;
+    border-top: 5px solid #0056b3; /* Adding a top border for visual separation */
 }
 
 /* Media Query for responsiveness */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    p, li {
+        font-size: 1rem;
+    }
     .container {
-        width: 90%; /* Adjust width for smaller screens */
+        padding: 15px;
     }
 }
