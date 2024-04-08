@@ -1,44 +1,27 @@
-const modalBtn = document.querySelector('.yt-modal-btn');
-const modal = document.querySelector('.modal-bg');
+document.addEventListener('DOMContentLoaded', function() {
+    const videoWrappers = document.querySelectorAll('.video-wrapper');
+    const modal = document.getElementById('videoModal');
+    const modalContent = modal.querySelector('.modal-content');
+    const closeBtn = modal.querySelector('.close');
+    const videoIframe = modal.querySelector('#videoIframe');
 
-//Add click event to the button
-modalBtn.addEventListener('click', () => {
-//Add youtube embed to the HTML
-/*You can get the embed code by right clicking
-any YT video and selecting 'embed code'*/
-modal.innerHTML =
-<div class="modal">
-    <iframe>
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/ZtW7ywEx_uo?enablejsapi=1&modestbranding=1" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-';
+    videoWrappers.forEach(function(wrapper) {
+        wrapper.addEventListener('click', function() {
+            const videoSrc = wrapper.getAttribute('data-src');
+            videoIframe.src = videoSrc;
+            modal.style.display = 'block';
+        });
+    });
 
-</div>
-modal.style.display = "flex";
-//smooth opacity transition
-setTimeout(() => {
-    modal.style.opacity = "1";
-}, 50);
-});
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        videoIframe.src = '';
+    });
 
-//Add click event to the modal bg
-modal.addEventListener('click', () => {
-    //Remove youtube embed to the HTML
-    /*This is a simple way to stop
-    the video from playing
-    when you close the modal*/
-    modal. innerHTML = '';
-    //smooth opacity transition
-    modal.style.opacity = "0";
-    setTimeout(() => {
-    //Hide the modal when the transition is done
-    modal.style.display = "none";
-    }, 450);
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            videoIframe.src = '';
+        }
+    });
 });

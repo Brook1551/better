@@ -11,9 +11,7 @@ body {
 
 
 }
-body:hover {
-  transition: background 2s;
-  }
+
 
 .poppins-thin {
   font-family: "Poppins", sans-serif;
@@ -107,7 +105,7 @@ body:hover {
 }
 
 nav {
-  z-index: 999; /* Add this */
+  z-index: 999;
   position: absolute;
   top: 15px;
   left: 50%;
@@ -116,8 +114,6 @@ nav {
   border: 2px solid #EBECF1;
   border-radius: 30px;
   animation: slide-in 1s ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-
 }
 ul {
   position: relative;
@@ -147,11 +143,10 @@ ul {
       display: block;
       margin: 12px -12px;
       padding: 0;
-      background: #FFA91B;
-      border: 2px solid #F7C833;
-      border-right: 2px solid #F89329;
-      border-bottom: 2px solid #F89329;
-      border-radius: 5px;
+      background-color: #8EC5FC;
+      background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+
       transition: opacity 0.2s, visibility 0.2s;
       li {
         margin: -2px 0 0 -2px;
@@ -163,10 +158,11 @@ ul {
       }
     }
     &:hover {
-      background: #EC4138;
-      border: 2px solid #F05749;
-      border-right: 2px solid #E02A21;
-      border-bottom: 2px solid #E02A21;
+      background-color: #0093E9;
+      background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+      
+      border: 2px solid transparent;
+
       a {
         color: #F9F8FD;
       }
@@ -200,7 +196,6 @@ ul {
 
 /* Podcasts Section Styles */
 .podcasts {
-
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -208,7 +203,7 @@ ul {
 }
 
 .podcast-category {
-  width: 33.3%; /* 1/3 of the row size */
+  width: 36%;
   margin-bottom: 2rem;
   margin: 3rem;
   padding: 2rem;
@@ -232,17 +227,18 @@ ul {
   color: #333;
 }
 
-/* Video Container Styles */
+
 .video-container {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%;
   margin-bottom: 20px;
-  z-index: 1; /* Ensure video stays behind other elements */
+  z-index: 1;
+  transition: transform 0.5s ease;
 }
 
-.video-container iframe {
+.video-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -250,12 +246,49 @@ ul {
   height: 100%;
   border: none;
   transition: transform 0.3s ease;
-   /* Change cursor to indicate clickability */
 }
 
-.video-container:hover iframe {
-  transform: scale(1.1); /* Enlarge video on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+.video-container:hover{
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
 }
 
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.modal-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
